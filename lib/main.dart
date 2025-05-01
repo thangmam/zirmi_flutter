@@ -23,32 +23,8 @@ class MyApp extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: Colors.black, width: 0.5),
           ),
-          child: Row(
-            children: [
-              // Container(width: 150, height: 150, color: Colors.red),
-              Image.asset("assets/arsilogo.png"),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Arsi Consultancy",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 25,
-                        ),
-                      ),
-                      Text("T-14 Bungkawn, Dam Veng,"),
-                      Text("Aizawl, Mizoram"),
-                      Spacer(),
-                      Text("contact@arsi.in"),
-                    ],
-                  ),
-                ),
-              ),
+          child: Row(children: [
+              
             ],
           ),
         ),
