@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zirmi_flutter/inline_span_test.dart';
+import 'package:zirmi_flutter/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,23 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Zirmi Flutter")),
-        body: Container(
-          height: 150,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 0.5),
-          ),
-          child: Row(children: [
-              
-            ],
-          ),
-        ),
-      ),
+      home: LoginScreen(),
     );
   }
 }
