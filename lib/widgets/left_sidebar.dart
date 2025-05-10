@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zirmi_flutter/screens/row_column_screen.dart';
 
 class LeftSidebar extends StatelessWidget {
   const LeftSidebar({super.key});
@@ -14,12 +15,27 @@ class LeftSidebar extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 60),
-          _buildSideMenuItem(label: "Add User", iconData: Icons.add),
+          _buildSideMenuItem(
+            label: "Rows/Columns",
+            iconData: Icons.add_business,
+            context: context,
+            child: RowColumnScreen(),
+          ),
+          _buildSideMenuItem(
+            label: "Add User",
+            iconData: Icons.add,
+            context: context,
+          ),
           _buildSideMenuItem(
             label: "Update user",
             iconData: Icons.verified_user,
+            context: context,
           ),
-          _buildSideMenuItem(label: "Settings", iconData: Icons.settings),
+          _buildSideMenuItem(
+            label: "Settings",
+            iconData: Icons.settings,
+            context: context,
+          ),
         ],
       ),
     );
@@ -28,11 +44,21 @@ class LeftSidebar extends StatelessWidget {
   Widget _buildSideMenuItem({
     required String label,
     required IconData iconData,
+    required BuildContext context,
+    Widget? child,
   }) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {},
+        onTap:
+            child != null
+                ? () {
+                  Navigator.of(context).pop();
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (ctx) => child));
+                }
+                : null,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
