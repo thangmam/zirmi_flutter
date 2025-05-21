@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:zirmi_flutter/screens/row_column_screen.dart';
+import 'package:zirmi_flutter/screens/stack_widget_screen.dart';
 
 class LeftSidebar extends StatelessWidget {
   const LeftSidebar({super.key});
@@ -15,6 +16,12 @@ class LeftSidebar extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 60),
+          _buildSideMenuItem(
+            label: "Stack Widget",
+            iconData: Icons.abc_sharp,
+            context: context,
+            child: StackWidgetScreen(),
+          ),
           _buildSideMenuItem(
             label: "Rows/Columns",
             iconData: Icons.add_business,
