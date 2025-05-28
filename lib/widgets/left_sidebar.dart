@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zirmi_flutter/screens/grid_view_screen.dart';
 import 'package:zirmi_flutter/screens/row_column_screen.dart';
 import 'package:zirmi_flutter/screens/stack_widget_screen.dart';
 
@@ -16,6 +17,13 @@ class LeftSidebar extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 60),
+
+          _buildSideMenuItem(
+            label: "GridView Widget",
+            iconData: Icons.grid_3x3_outlined,
+            context: context,
+            child: GridViewScreen(),
+          ),
           _buildSideMenuItem(
             label: "Stack Widget",
             iconData: Icons.abc_sharp,
